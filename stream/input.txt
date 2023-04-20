@@ -1,0 +1,151 @@
+The Particle Device Cloud API is a REST API. REST means a lot of things, but first and foremost it means that we use the URL in the way that it's intended: as a "Uniform Resource Locator".In this case, the unique "resource" in question is your device (Core, Photon, Electron). Every device has a URL, which can be used to GET variables, POST a function call, or PUT new firmware. The variables and functions that you have written in your firmware are exposed as subresources under the device.All requests to the device come through our API server using TLS security.
+PROTOCOL AND HOST
+"https://api.particle.io"Formatting note: When we write something prefixed with a colon :, we mean you should substitute your own information. For example when you see something like /v1/devices/:deviceId you might code something like /v1/devices/55ff8800beefcafe12345678.Product ID or slugFor product endpoints, you need to specify which product the API call targets. You can use either the product ID or the short alphanumerical product slug. Get either from the Console. In this example, the product ID is 1337 and the product slug is my-product-v1.
+Format
+The Particle API accepts requests in JSON (content type application/json) and in form encoded format (content type application/x-www-form-urlencoded). It always replies with JSON (content type application/json).
+# Example with form encoded format
+curl https://api.particle.io/v1/devices/mydevice/wakeup \
+     -d arg=please \
+     -d access_token=1234
+
+# Same example with JSON
+curl "https://api.particle.io/v1/devices/mydevice/wakeup?access_token=1234" \
+     -H "Content-Type: application/json" \
+     -d "{\"arg\": \"please\"}"In these docs, you'll see example calls written using a terminal program called curl which may already be available on your machine.The examples use form encoded data to make them easier to read and type but unless specified otherwise any endpoint can also accept a JSON object with the parameters as properties.
+Postman
+In addition to using curl, you can use Postman a 3rd-party product that provides a web-based graphical interface for making API calls.To making using Postman significantly easier, download postman.zip and extract the two files:
+Particle Device Cloud API.postman_collection.json
+Particle Postman Environment.postman_environment.json
+Use the Import feature to import these two files into Postman.Last updated: July 2021.
+Import
+Once you've imported the Particle Postman Environment you can select it from the popup in the upper right corner of the Postman workspace window.
+Set Environment
+Authenticating with Postman
+Using a quickly expiring access token is a good way to maintain security when using Postman. You can easily do this using the Particle CLI.The parameter is the number of seconds, so 3600 is one hour. If you leave off the --expires-in option, the token will be good for 90 days. You can also create a non-expiring token.particle token create --expires-in 3600
+To use this token, select Particle Postman Environment in the upper right corner of the Postman workspace (1).
+
+Click the eye icon next to it to view the configuration (2).
+
+Paste in the access token in the access_token field (3).
+
+Access Token
+It's also possible to enter your username and password in the Postman environment, and also possible to generate the token from within Postman itself. However, these techniques are hard to use if you have multi-factor authentication (MFA) enabled on your Particle account. The CLI and access_token technique above works both with and without MFA enabled.
+Example: List devices
+A good way to test out your access token is use List devices.
+Open Collections then Particle Device Cloud API then Devices then List devices.
+
+If you've entered the access_token in the previous step, there should be a small green circle on the Authorization tab.
+
+Click the blue Send button.
+
+List Devices
+You should get output with information about your devices in the bottom pane.
+List Output
+Example: Calling a function
+Open Collections then Particle Device Cloud API then Devices then Call a function.
+
+In the Params tab, enter the device ID you want to call in deviceid and the function name in functionName. In this case, we're using the Blink and LED firmware on the device, so it will respond to the led function.
+
+Function Name
+You don't need to enter anything in the Authorization tab, but this is how the data gets from the Environment into the API call.
+Authorization
+In this example, we're passing the value on in the arg parameter. This turns on the blue D7 LED on the device with the Blink and LED firmware.
+Call function
+Click Send. It will also show some output in the bottom pane if the device is online and is running the appropriate firmware.
+Authentication
+Just because you've connected your Particle device to the internet doesn't mean anyone else should have access to it. Permissions for controlling and communicating with your Particle device are managed with OAuth2.
+# You type in your terminal
+curl https://api.particle.io/v1/devices/0123456789abcdef01234567/brew \
+     -d access_token=9876987698769876987698769876987698769876
+# Response status is 200 OK, which means
+# the device says, "Yes ma'am!"
+
+# Sneaky Pete tries the same thing in his terminal
+curl https://api.particle.io/v1/devices/0123456789abcdef01234567/brew \
+     -d access_token=1234123412341234123412341234123412341234
+# Response status is 403 Forbidden, which means
+# the device says, "You ain't the boss of me."
+
+# LESSON: Protect your access token.You can create an access token using the Particle CLI.When you connect your Particle device to the Cloud for the first time, it will be associated with your account, and only you will have permission to control your Particle device—using your access token.
+How to send your access token
+There are three ways to send your access token in a request.
+In an HTTP Authorization header (always works)
+In the URL query string (only works with GET requests)
+In the request body (only works for POST, PUT and DELETE when body is form encoded)
+To send a custom header using curl, use you the -H flag. The access token is called a "Bearer" token and goes in the standard HTTP Authorization header.
+curl -H "Authorization: Bearer 38bb7b318cc6898c80317decb34525844bc9db55" \
+  https://...
+The query string is the part of the URL after a ? question mark. To send the access token in the query string just add access_token=38bb.... Because your terminal may think the question mark is special, enclose the entire URL in double quotes.
+curl "https://api.particle.io/v1/devices?access_token=38bb7b318cc6898c80317decb34525844bc9db55"
+The request body is how form contents are submitted on the web. Using curl, each parameter you send, including the access token is preceded by a -d flag. By default, if you add a -d flag, curl assumes that the request is a POST. If you need a different request type, you have to specifically say so with the -X flag, for example -X PUT.
+curl -d access_token=38bb7b318cc6898c80317decb34525844bc9db55 \
+  https://...
+Generate an access token
+POST /oauth/tokenCreates an access token that gives you access to the Cloud API.You must give a valid OAuth client ID and secret in HTTP Basic Auth or in the client_id and client_secret parameters. For controlling your own developer account, you can use particle:particle. Otherwise use a valid OAuth Client ID and Secret. This endpoint doesn't accept JSON requests, only form encoded requests. See OAuth Clients.Refresh tokens only work for product tokens, and even then they are not particularly useful. In order to generate a new access token from the refresh token you still need the client ID and secret. Because of this, it's simpler to just generate a new token, and then you don't need to remember and keep secure the refresh token. Also refresh tokens have a lifetime of 14 days, much shorter than the default access token lifetime of 90 days.
+Authorization
+REQUIRED
+string
+HTTP Basic Auth where username is the OAuth client ID and password is the OAuth client secret. Any client ID will work, but we suggest particle:particle.
+
+client_id
+REQUIRED
+string
+OAuth client ID. Required if no Authorization header is present.
+
+client_secret
+REQUIRED
+string
+OAuth client secret. Required if no Authorization header is present.
+
+grant_type
+REQUIRED
+string
+OAuth grant type. Usually password.
+
+username
+REQUIRED
+string
+Your Particle account username
+
+password
+REQUIRED
+string
+Your Particle account password
+
+expires_in
+number
+How many seconds the token will be valid for. 0 means forever. Short lived tokens are better for security.
+
+expires_at
+date
+When should the token expire? This should be an ISO8601 formatted date string.
+
+$ curl https://api.particle.io/oauth/token \
+       -u particle:particle \
+       -d grant_type=password \
+       -d "username=joe@example.com" \
+       -d "password=SuperSecret"
+access_token
+string
+The magical token you will use for all the other requests
+
+token_type
+string
+—
+expires_in
+string
+The number of seconds this token is valid for. Defaults to 7776000 seconds (90 days) if unspecified in the request. 0 means forever.
+
+refresh_token
+string
+Used to generate a new access token when it has expired.
+
+POST /oauth/token
+HTTP/1.1 200 OK
+{
+  "access_token": "254406f79c1999af65a7df4388971354f85cfee9",
+  "token_type": "bearer",
+  "expires_in": 7776000,
+  "refresh_token": "b5b901e8760164e134199bc2c3dd1d228acf2d90"
+}
+error
