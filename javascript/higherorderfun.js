@@ -67,7 +67,33 @@
 
 //   console.log(resultArr);
 
+// let data = {name:"vikas"};
+// console.log(delete data.name);
 
-let data = {name:"vikas"};
 
-console.log(delete data.name);
+// let data = {name:"vikas"};
+// Object.freeze(data)
+// console.log(delete data.name);
+
+// let data = {name:"rakesh"}
+
+// console.log(delete data);
+
+// let data = ["vikash","rakesh","sandhya","anam","ranjita"];
+
+// let [,,z] = data;
+
+// console.log(z);
+
+
+// let obj1 = {name:"vikash",age:25,contact:'8898005488'};
+// let obj2 = {first:"rakesh",last:"parida",mob:'7859648525'};
+
+//  obj1 = {...obj1,...obj2} 
+
+// console.log(obj1);
+
+
+
+
+
