@@ -141,3 +141,9 @@
 //  console.log(isNaN(b));
 
 
+let obj = {name:"aachal"}
+
+Object.freeze(obj);
+Object.seal(obj);
+console.log(obj.name  = "ranita") 
+console.log(obj);
