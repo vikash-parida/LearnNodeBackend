@@ -68,8 +68,6 @@
 //   console.log(resultArr);
 
 
-    
+let data = {name:"vikas"};
 
-    
-
-
+console.log(delete data.name);
