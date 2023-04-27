@@ -94,6 +94,50 @@
 // console.log(obj1);
 
 
+// let result = 0||false||null||NaN||undefined||""||[]
 
+// console.log(result);
+
+// console.log(Promise.resolve(5));
+
+// let a = 100;
+// function fun(){
+// console.log(a);
+// let a = 10;
+// }
+
+// fun();
+
+
+
+// let a = 1000;
+// function fun(){
+//     console.log(a);
+// }
+// fun();
+
+//arrow function
+// console.log(`${(x => x)("i love")} to program`)
+
+
+// function sum(x,y,z){
+//     return x + y + z
+// }
+// console.log(sum(...[1,2,3]));
+
+
+// let str = 'this is a string datatype';
+
+// console.log(!typeof str === 'object');
+// console.log(!typeof str === 'string');
+// console.log(!typeof str === false);
+
+
+
+//  let a = "string";
+//  let b = 10;
+
+//  console.log(isNaN(a));
+//  console.log(isNaN(b));
 
 
