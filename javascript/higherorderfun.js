@@ -141,9 +141,55 @@
 //  console.log(isNaN(b));
 
 
-let obj = {name:"aachal"}
+// let obj = {name:"aachal"}
 
-Object.freeze(obj);
-Object.seal(obj);
-console.log(obj.name  = "ranita") 
-console.log(obj);
+// Object.freeze(obj);
+// Object.seal(obj);
+// console.log(obj.name  = "ranita") 
+// console.log(obj);
+
+
+// let number = [2,0,9,7]// remove first 
+
+// let  arr = [1,2,3]
+// //in the array there are 0 index , 1 index and 2 index .
+// if(arr[2] != 30){
+// console.log(false)
+// }
+
+//From the above code we will get false as result because when it will get arr[2] is 3 not 30 like that 
+// if(arr[3] != 56){
+// console.log(true);
+// arr[3] = 56;
+// }
+
+// console.log(arr[3]);
+
+// let data = {
+//     name:"aachal"
+// }
+
+// console.log(delete data);
+
+// let data = "false";
+// console.log(!data); // string convert into boolean false value 
+
+// let data = "true";
+// console.log(!!data); //string convert into boolean true  value
+
+// let arr = ["vikash","rakesh","ranita"];
+
+// console.log(delete arr[1]);
+
+// console.log(arr)
+// let obj1 = {name:"aachal",age:25,mob:'8898005488'};
+// let obj2 = {name:"neha",address:"andheri"}
+
+// let newObj = {...obj1,...obj2};
+// console.log(newObj);
+
+// let arr1 = [1,2,3,4,5,6];
+// let arr2 = [6,7,8,9,10];
+
+// let newArr = [...arr1,...arr2];
+// console.log(newArr);
