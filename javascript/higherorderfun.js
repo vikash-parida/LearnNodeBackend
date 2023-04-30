@@ -193,3 +193,25 @@
 
 // let newArr = [...arr1,...arr2];
 // console.log(newArr);
+
+// async function fun(){
+//     console.log(1);
+
+//    fun2().then((data)=>{
+//     console.log(3)
+//    })
+//    await fun2();
+   
+//     // console.log(3);
+// } 
+
+// fun();
+// function fun2() {
+//     return new Promise((resolve, reject) => {
+//         (setTimeout(()=>{
+// resolve(console.log(2))
+// // console.log(2);
+//         },1000))
+//     })
+    
+// }
