@@ -216,7 +216,7 @@
     
 // }
 
-
+//                                                  class in javascript 
 // class Persion {
 //     constructor(_name,_age,_address){
 //         this.name = _name
@@ -233,3 +233,16 @@
 // let p2 = {...p1}
 
 // console.log(p2);
+
+//                                     constructor function in javascript
+
+// function Persion(_name,_age,_address){
+//         this.name = _name
+//         this.age = _age
+//         this.address = _address
+// };
+
+
+// let p1 = new Persion("vikash",25,"andheri");
+
+// console.log(p1);
