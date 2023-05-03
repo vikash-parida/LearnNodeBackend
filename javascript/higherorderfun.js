@@ -246,3 +246,78 @@
 // let p1 = new Persion("vikash",25,"andheri");
 
 // console.log(p1);
+
+
+// let a = 10;
+// setTimeout(()=>{
+//     console.log(a)
+// },0)
+// a = 100;
+
+// let a = 1;
+// let c = 2;
+// let b = 1;
+
+// console.log(--c === a);
+// console.log(a === --c === b)
+
+
+// console.log(3*3); // return 9
+// console.log(3**3); // return 27
+// console.log(3***3); // return error "*"
+
+// let a = [[[[[[[[[[]]]]]]]]]];
+
+// console.log(a); // give nested array
+
+// function fun1(){
+//     console.log(name);
+//     console.log(price);
+
+//     var name = "mobile";
+//     let price = 100;
+// }
+
+// fun1()
+
+// let data = "size";
+
+// let obj = {
+//     size : 1000
+// }
+
+// console.log(obj[data]);
+// console.log(obj["size"]);
+// console.log(obj.size);
+// console.log(obj.data);
+
+// function run() {
+//     console.log("hii");  
+// }
+
+// run.mobile = 8898005488;
+
+// console.log(run.mobile);
+
+// run()
+
+
+// let arr = [10,1,25,4,6,4,151,84,1,6544,21,1,4,4,,,64,6,44,1,21,51,84,8,4,1,54,4,8];
+
+// console.log(arr.sort());
+
+// let obj = {
+//     prop1:{
+//         prop2:{
+//             prop3:{
+//                 fname:"vikas"
+//             }
+//         }
+//     }
+// }
+
+
+// let objClone = structuredClone(obj)
+
+// console.log(`obj === objClone | ${obj === objClone}`);
+// console.log(`obj.prop1 === objClone.prop1| ${obj.prop1 === objClone.prop1}`);
