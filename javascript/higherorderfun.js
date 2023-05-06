@@ -306,6 +306,9 @@
 
 // console.log(arr.sort());
 
+
+
+// deep copy
 // let obj = {
 //     prop1:{
 //         prop2:{
@@ -321,3 +324,77 @@
 
 // console.log(`obj === objClone | ${obj === objClone}`);
 // console.log(`obj.prop1 === objClone.prop1| ${obj.prop1 === objClone.prop1}`);
+
+
+
+
+// const transferred = structuredClone(
+//     { x: { y: { z: arrayBuffer1, w: arrayBuffer2 } } },
+//     { transfer: [arrayBuffer1] }
+//   );
+
+//   console.log(transferred);
+
+
+// let os = require('os')
+
+// console.log(os.release());
+
+// let fs = require('node:fs')
+
+// console.log(fs);
+
+
+// function loopRun(){
+//     let arr = []
+//     for(let i=1; i < 1000000;i++){
+//      arr.push(i)
+//     }
+//     setTimeout(()=> console.log("inside function print global object ",globalThis),1000000)
+//     console.log(arr);
+   
+// }
+
+// loopRun();
+// console.log("outside of function print global object",globalThis)
+
+// setTimeout(()=> console.log("hii"),0);
+
+// setImmediate(()=> console.log("setImmediate function is call"))
+
+//we can obj key we use number
+
+// let newObj = {1:"a",2:"b",3:"d"};
+
+// console.log(newObj.hasOwnProperty("a"));
+// console.log(newObj.hasOwnProperty(1));
+
+// console.log(undefined == null);
+
+
+// let obj = {a:"qwe",b:"tyui",a:"rtyuio"}
+
+// console.log(obj);
+
+// let person = {name:"vikash"};
+
+// function showData(age){
+//     console.log(`user name is ${this.name} and age is ${age}`);
+// }
+
+// console.log(showData.call(person,21));
+
+// console.log(showData.bind(person,21));
+
+
+
+
+
+
+
+
+
+
+
+
+
