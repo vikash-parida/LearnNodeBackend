@@ -386,6 +386,27 @@
 
 // console.log(showData.bind(person,21));
 
+// function sayHii(){
+//     return () => 0
+// }
+
+// console.log(typeof sayHii()());
+
+// let arr = [1,2,3,4];
+
+// arr[6] = 12;  // index 4,5 are empty 
+
+// console.log(arr);
+
+// let arr = [1,2,3,4];
+
+// arr[6] = arr;  // index 6 store  array infynity  time 
+
+// console.log(arr[6]);
+
+
+
+
 
 
 
