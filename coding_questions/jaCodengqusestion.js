@@ -407,6 +407,22 @@
 
 
 
+// console.log(setInterval(()=> console.log("hii"),50))
+
+// console.log("end interval ",setTimeout(()=>{clearInterval(1)},100))
+
+// let first = new Promise((resolve, reject) => {
+//     setTimeout(resolve,500,"one")
+// })
+
+// let second = new Promise((resolve, reject) => {
+//     setTimeout(resolve,100,"two")
+// })
+
+
+// Promise.race([first,second]).then((a)=> console.log(a))
+
+
 
 
 
