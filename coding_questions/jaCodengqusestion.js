@@ -423,6 +423,16 @@
 // Promise.race([first,second]).then((a)=> console.log(a))
 
 
+// let person = {fname:"vikash"};
+
+// let member = [person];
+
+// person = null;
+
+// console.log(person);
+// console.log(member);
+
+
 
 
 
