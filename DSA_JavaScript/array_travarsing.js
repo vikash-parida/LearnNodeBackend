@@ -18,4 +18,6 @@ let Data = [1,2,3,4,5,6,7,8,9,10,77,85,25,91,15,45,96,36,45,78,12,65,94,100];
 
 // accessing array element using index number 
 
-console.log(Data[0]);
+// console.log(Data[0]);
+
+
