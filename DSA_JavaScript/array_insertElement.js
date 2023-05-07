@@ -80,9 +80,14 @@ let newArrayValue = [30,60,80,10,90];
 // for(let i = 0 ; i < data.length ; i++){
 // if(data[i] == searchEle){
 //     results = i
+//     break;
 // }
 // }
 
 // console.log(results);
+
+//in build method in js search element in a  given array
+
+// Data.indexOf(10);
 
 
