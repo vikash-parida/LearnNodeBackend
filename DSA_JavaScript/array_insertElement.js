@@ -69,8 +69,20 @@ let newArrayValue = [30,60,80,10,90];
 
 
 
+// search arr element in given array using for loop liner search 
 
+// let data = [10,20,80,60,90,40,30,70]
 
+// let searchEle = 90;
 
+// let results = false;
+
+// for(let i = 0 ; i < data.length ; i++){
+// if(data[i] == searchEle){
+//     results = i
+// }
+// }
+
+// console.log(results);
 
 
