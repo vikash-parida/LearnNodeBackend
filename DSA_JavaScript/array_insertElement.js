@@ -21,8 +21,56 @@ let newArrayValue = [30,60,80,10,90];
 
 // array in ele insert using splice method in js
 
-newArrayValue.splice(2,0,2000);
+// newArrayValue.splice(2,0,2000);
 
 
 
-console.log(newArrayValue);
+// console.log(newArrayValue);
+
+
+// let arr = ["vikash","rakesh","sandhya","anam","aachal"]
+
+// function addArr(ele,index){
+
+// let eleAdd = ele;
+
+// let positionIndex = index;
+
+// for(let i = arr.length-1; i >= 0;i--){
+
+//  if(i>=positionIndex){
+//     arr[i+1] = arr[i];
+//     if(i == positionIndex){
+//         arr[i] = eleAdd;
+//     }
+//  }
+// }
+//  return arr 
+// }
+
+
+// let newArr = addArr("ranita",3)
+// console.log(newArr);
+
+
+
+// let  data = [1,11,22,33,66,58,77,88,99,100];
+// function removeElement(removeEle){
+
+// for(let i = removeEle; i < data.length - 1 ; i++){
+//    data[i] = data[i + 1];
+// }
+
+// data.length = data.length-1
+// console.log(data);
+// }
+
+// removeElement(6)
+
+
+
+
+
+
+
+
