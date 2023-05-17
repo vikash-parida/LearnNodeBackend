@@ -56,22 +56,27 @@
 // create multiply function in js using HOD function
 
 
-function multiplyBy(num1){
+// function multiplyBy(num1){
 
-    return function(num2){
-        return num1*num2;
-    }
+//     return function(num2){
+//         return num1*num2;
+//     }
 
-}
+// }
 
 // let multiplyByOne = multiplyBy(1);  multiply of one function 
 // let multiplyByTwo = multiplyBy(2);  multiply of two function
 
 
 
-console.log(multiplyByOne(1));
-console.log(multiplyByOne(2));
-console.log(multiplyByOne(3));
+// console.log(multiplyByOne(1));
+// console.log(multiplyByOne(2));
+// console.log(multiplyByOne(3));
 
-console.log(multiplyByTwo(2));
-console.log(multiplyByTwo(3));
+// console.log(multiplyByTwo(2));
+// console.log(multiplyByTwo(3));
+
+
+// use arrow function to keep code clear and less line of code
+
+
